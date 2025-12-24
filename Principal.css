@@ -1,0 +1,472 @@
+body {
+  background: url("https://i.pinimg.com/736x/5c/ab/46/5cab46746e2645ae3ed316398b0dc213.jpg") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+#darkmode-toggle {
+    display: none;
+}
+
+#darkmode-toggle:checked + label.dark-btn {
+    background: #aa5388;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,.4);
+}
+
+/* -------- DARK MODE GENERAL -------- */
+
+#darkmode-toggle:checked ~ #page {
+    --bg: #2b0e1f;
+    --text: #f8d3ea;
+    --card: #3a1630;
+    --border: #aa5388;
+
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+#darkmode-toggle:checked ~ #page {
+    --text: #3a1630;
+}
+
+/* Header */
+#darkmode-toggle:checked ~ #page header {
+    background-color: #3a1630;
+    box-shadow: 0 3px 12px rgba(0,0,0,.4);
+    --text: #3a1630
+}
+
+#darkmode-toggle:checked ~ #page .dropdown-content a {
+    color: #b28ca4;
+}
+
+/* Cards */
+#darkmode-toggle:checked ~ #page .text-box {
+    background: var(--card);
+    border-color: var(--border);
+    box-shadow: 0 8px 22px rgba(0,0,0,.5);
+}
+
+/* Footer */
+#darkmode-toggle:checked ~ #page footer {
+    background: #3a1630;
+    color: #f8d3ea;
+}
+
+
+/* --- VALORES PARA MODO OSCURO --- */
+#darkmode-toggle:checked ~ #page {
+    --text: #ffffff;                       /* TEXTO BLANCO */
+    --card: rgba(58,22,48,0.6);
+    --border: #aa5388;
+    --page-bg: rgba(43, 14, 31, 0.6);      /* fondo del recuadro, NO tapa el wallpaper */
+}
+
+:root {
+    --bg: #fff9fc;
+    --text: #082017;
+    --card: #fff1f8;
+    --border: #f2c6db;
+    --page-bg: rgba(255, 255, 255, 0.75);
+}
+
+#page {
+    color: var(--text);
+    background: var(--page-bg);
+    backdrop-filter: blur(4px);
+}
+
+.dark-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #f4c9dc;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255,150,190,.4);
+    z-index: 999;
+}
+
+#darkmode-toggle:checked ~ #page #vinyl-carousel a span {
+    color: var(--text);
+}
+
+
+#darkmode-toggle:checked ~ #page .footertext a,
+#darkmode-toggle:checked ~ #page .footertext span {
+    color: var(--text);
+}
+
+header { 
+    background-image:url(https://i.pinimg.com/736x/d0/68/00/d0680075e2a676af5b80bd0dba920760.jpg); 
+    padding: 50px 100px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    box-shadow: 0 3px 12px rgba(255, 255, 255, 0.977); 
+    position: sticky; 
+    z-index: 50; 
+    width: 85vw;
+}
+
+
+/* --- TEXTO BLANCO EN TODA LA PÁGINA --- */
+body {
+    color: #53479f;
+    text-shadow: 4px 4px 10px rgba(243, 242, 246, 0.7);
+}
+
+header span, header a {
+    color: #ffdbf4;
+    text-shadow: 0 0 4px rgba(0, 36, 80, 0.7);
+}
+/* --- EFECTO GLITCH SUAVE PARA TODO EL TEXTO --- */
+@keyframes globalGlitch {
+  0% {
+    text-shadow:
+      0.5px 0 2px rgba(0, 255, 255, 0.6),
+      -0.5px 0 2px rgba(255, 0, 255, 0.6);
+    transform: translate(0);
+  }
+  20% {
+    text-shadow:
+      1px 0 3px rgba(0, 255, 255, 0.6),
+      -1px 0 3px rgba(255, 0, 255, 0.6);
+    transform: translate(0.3px, -0.3px);
+  }
+  40% {
+    text-shadow:
+      0.5px 0 2px rgba(0, 255, 255, 0.6),
+      -0.5px 0 2px rgba(255, 0, 255, 0.6);
+    transform: translate(-0.3px, 0.3px);
+  }
+  60% {
+    text-shadow:
+      1px 0 3px rgba(0, 255, 255, 0.6),
+      -1px 0 3px rgba(255, 0, 255, 0.6);
+    transform: translate(0.2px, -0.2px);
+  }
+  100% {
+    text-shadow:
+      0 0 4px rgba(150, 200, 255, 0.7);
+    transform: translate(0);
+  }
+}
+
+/* --- APLICAR GLITCH A TODOS LOS TEXTOS --- */
+/* glitch solo en textos, SUPER suave */
+p, h1, h2, h3, h4, h5, h6, a, li, span {
+    animation: globalGlitch 4s infinite ease-in-out;
+}
+
+
+.the-title {
+    display: block;          /* permite centrar con margin */
+    margin: 20px auto;       /* AUTO = centrado */
+    width: 350px;            /* achica la imagen, vos elegís el tamaño */
+    border-radius: 10px;     /* opcional, por si lo querés cute */
+}
+
+
+/* ESTA ES LA CAJA PRINCIPAL DEL “SITE” */
+#page {
+  width: 70vw;
+  max-width: 900px;
+  min-height: 100vh;
+  margin: 0 auto; 
+  justify-content: space-between; 
+  align-items: center; 
+  background: rgba(255, 255, 255, 0.75); /* podés cambiar la opacidad */
+  backdrop-filter: blur(4px); /* queda HERMOSO */
+  padding: 20px 40px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.25);
+  border-radius: 15px;
+}
+
+
+.text-box {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background: rgba(255, 240, 250, 0.65);
+    border: 2px solid #ffc6e6;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(255, 170, 210, 0.2);
+    backdrop-filter: blur(4px);
+
+    /* EL SECRETO */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;  /* separación entre texto y los círculos */
+}
+
+.poem {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.poem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* se mantiene bien dentro del círculo */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.poem:hover {
+    transform: scale(1.08);     /* se agranda un poquito el círculo */
+}
+
+.poem:hover img {
+    transform: scale(1.08);     /* zoom suave en la imagen */
+}
+
+/* Texto del nombre */
+.poem-name {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0;
+    background: rgba(0,0,0,0.55);
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* El texto aparece al hacer hover */
+.poem:hover .poem-name {
+    opacity: 1;
+}
+
+
+/* Banner */
+
+
+.bannertv-container {
+    margin: 40px auto;
+    width: 90%;
+    max-width: 380px;
+    align-items: center;
+    position: relative;
+    overflow: hidden !important;
+    border-radius: 12px;
+}
+
+.bannertv-container video,
+.bannertv-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+    display: block;
+}
+
+    /* MUSIC */
+
+.music-grid {
+    display: flex;
+    flex-wrap: wrap;            /* se acomodan solos */
+    gap: 20px;                  /* separación entre círculos */
+    justify-content: center;    /* centrado bonito */
+    margin: 40px auto;
+}
+
+.music {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.music img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* se mantiene bien dentro del círculo */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.music:hover {
+    transform: scale(1.08);     /* se agranda un poquito el círculo */
+}
+
+.music:hover img {
+    transform: scale(1.15);     /* zoom suave en la imagen */
+}
+
+/* Texto del nombre */
+.music-name {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0;
+    background: rgba(0,0,0,0.55);
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* El texto aparece al hacer hover */
+.music:hover .music-name {
+    opacity: 1;
+}
+
+.bannerart-container {
+    margin: 40px auto;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.bannerart-container video,
+.bannerart-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+    display: block;
+}
+
+.bannertv-container .arrow {
+    position: static;
+    display: inline-block;
+    font-size: 35px;
+    margin: 10px 15px;
+}
+
+.bannertv-container {
+    text-align: center;
+}
+
+/* El truco para que NO se salgan */
+.banner {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%; 
+}
+
+.slide {
+    min-width: 100%;
+    overflow: hidden;
+
+    /* ⚠️ Agregamos ESTO para que no pise lo otro */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Flechas */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+    text-shadow: 0 0 10px black;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+.slide video {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+
+.contenedor-centrado {
+    /* Define un ancho fijo para que el margen auto funcione */
+    width: fit-content; /* O un valor fijo como 400px, 50% */
+    
+    /* Centra el bloque horizontalmente */
+    margin: 0 auto; 
+    
+    /* Opcional: Centrar el texto DENTRO del bloque (si es necesario) */
+    /* text-align: center; */
+}
+
+.footer { 
+    background: #fff1f8; 
+    padding: 40px; 
+    text-align: center; 
+    font-family: 'Playfair Display', serif; 
+}
+footer {
+  background: #fff1f8;
+  padding: 40px;
+  font-family: 'Playfair Display', serif;
+  display: flex;               /* activa flexbox */
+  flex-direction: column;      /* apila texto encima de la imagen */
+  justify-content: center;     /* centra verticalmente si hace falta */
+  align-items: center;         /* centra horizontalmente */
+  gap: 12px;                   /* espacio entre texto e imagen */
+  text-align: center;          /* por si el texto ocupa varias líneas */
+}
+
+footer img {
+  max-width: 700px;  
+  width: 50%;        /* será responsiva en pantallas chicas */
+  height: auto;       /* mantiene proporciones */
+  display: block;
+}
+
+
+@keyframes loading {
+ 0% {opacity: 1;}
+ 75% {opacity: 1;}
+ 100% {opacity: 0;}
+}
+
+body:before {
+ content: " ";
+ height: 100vh;
+ width: 100vw;
+ display: block;
+ position: fixed;
+ top: 0;
+ left: 0;
+ z-index: 999999;
+ background-image: url("https://i.pinimg.com/originals/51/8f/a1/518fa1a163a306dbbfa0f34705a46ee6.gif");
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ animation: loading 2.5s ease 0s 1 normal forwards;
+ pointer-events: none;
+ filter: grayscale(0%)
+}
